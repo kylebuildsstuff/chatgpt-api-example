@@ -22,4 +22,20 @@
 	};
 </script>
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<ul role="list" class="divide-y divide-gray-200">
+	<li class="flex py-4">
+		<img class="h-10 w-10 rounded-full" src="/alfred-headshot.png" alt="" />
+		<div class="ml-3">
+			<p class="text-sm font-medium text-gray-900">Calvin Hawkins</p>
+			<p class="text-sm text-gray-500">calvin.hawkins@example.com</p>
+		</div>
+	</li>
+
+	<li class="flex py-4">
+		<img class="h-10 w-10 rounded-full" src="/batman-headshot.png" alt="" />
+		<div class="ml-3">
+			<p class="text-sm font-medium text-gray-900">Kristen Ramos</p>
+			<p class="text-sm text-gray-500">kristen.ramos@example.com</p>
+		</div>
+	</li>
+</ul>
