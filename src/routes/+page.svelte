@@ -3,11 +3,17 @@
 
 	import ChatMessage from './chat-message.svelte';
 
-	onMount(async () => {
-		const what = await handleChatCompletion();
+	let message = '';
 
-		console.log('what: ', what);
-	});
+	$: {
+		console.log('message: ', message);
+	}
+
+	// onMount(async () => {
+	// 	const what = await handleChatCompletion();
+
+	// 	console.log('what: ', what);
+	// });
 
 	const handleChatCompletion = async () => {
 		const response = await fetch('/api/chat', {
@@ -21,6 +27,8 @@
 		}).then((res) => res.json());
 
 		return response;
+
+		message = '';
 	};
 </script>
 
@@ -33,6 +41,7 @@
 <form class="mt-4">
 	<div class="relative mt-1 flex items-center">
 		<input
+			bind:value={message}
 			type="text"
 			name="search"
 			id="search"
