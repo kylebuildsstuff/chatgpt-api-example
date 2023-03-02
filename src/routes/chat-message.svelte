@@ -1,8 +1,9 @@
 <script lang="ts">
-	export let name = '';
+	export let role = '';
 	export let message = '';
 
-	const imgSrc = name === 'Alfred' ? '/alfred-headshot.png' : '/batman-headshot.png';
+	const imgSrc = role === 'assistant' ? '/alfred-headshot.png' : '/batman-headshot.png';
+	const name = role === 'assistant' ? 'Alfred' : 'Batman';
 </script>
 
 <li class="flex py-4">
