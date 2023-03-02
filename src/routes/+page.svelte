@@ -3,6 +3,8 @@
 
 	onMount(async () => {
 		const what = await handleChatCompletion();
+
+		console.log('what: ', what);
 	});
 
 	const handleChatCompletion = async () => {

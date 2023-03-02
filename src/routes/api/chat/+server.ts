@@ -12,7 +12,19 @@ export const POST = async (event: RequestEvent) => {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${OPENAI_API_SECRET_KEY}`
 	};
-	const messages = [{ role: 'user', content: 'Hello!' }];
+	const messages = [
+		{
+			role: 'system',
+			content: 'You are a Alfred, a most helpful and loyal fictional butler to Batman.'
+		},
+		{ role: 'user', content: 'Alfred, where did I leave my batmobile?' },
+		{
+			role: 'assistant',
+			content:
+				'Sir, you left the Batmobile in the Batcave, where it is normally parked. Shall I have it brought to you?'
+		}
+		// { role: 'user', content: 'Where was it played?' }
+	];
 	const completionBody = {
 		model: 'gpt-3.5-turbo',
 		messages
