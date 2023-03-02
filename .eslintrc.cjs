@@ -8,6 +8,16 @@ module.exports = {
 	settings: {
 		'svelte3/typescript': () => require('typescript')
 	},
+	rules: {
+		'@typescript-eslint/no-explicit-any': ['off'],
+		'@typescript-eslint/no-this-alias': [
+			'error',
+			{
+				allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+				allowedNames: ['context'] // Allow `const self = this`; `[]` by default
+			}
+		]
+	},
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020
