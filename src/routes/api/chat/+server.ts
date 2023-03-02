@@ -16,13 +16,13 @@ export const POST = async (event: RequestEvent) => {
 		{
 			role: 'system',
 			content: 'You are a Alfred, a most helpful and loyal fictional butler to Batman.'
-		},
-		{ role: 'user', content: 'Alfred, where did I leave my batmobile?' },
-		{
-			role: 'assistant',
-			content:
-				'Sir, you left the Batmobile in the Batcave, where it is normally parked. Shall I have it brought to you?'
 		}
+		// { role: 'user', content: 'Alfred, where did I leave my batmobile?' },
+		// {
+		// 	role: 'assistant',
+		// 	content:
+		// 		'Sir, you left the Batmobile in the Batcave, where it is normally parked. Shall I have it brought to you?'
+		// }
 		// { role: 'user', content: 'Where was it played?' }
 	];
 	const completionBody = {
@@ -46,5 +46,7 @@ export const POST = async (event: RequestEvent) => {
 		})
 		.then((res) => res.json());
 
-	return json(completion);
+	const message = completion?.choices?.[0]?.message?.content || '';
+
+	return json(message);
 };
