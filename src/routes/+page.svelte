@@ -2,11 +2,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
-		console.log('Hello world!');
-
 		const what = await handleChatCompletion();
-
-		console.log('what: ', what);
 	});
 
 	const handleChatCompletion = async () => {
